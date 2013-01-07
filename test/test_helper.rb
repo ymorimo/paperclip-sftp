@@ -40,6 +40,6 @@ class Dummy < ActiveRecord::Base
     sftp_options: {
       host: "localhost",
       user: "spectator",
-      password: "password"
+      options: { password: "password" }
     }
 end

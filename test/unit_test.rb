@@ -11,7 +11,7 @@ class UnitTest < MiniTest::Should::TestCase
       assert_equal :sftp, dummy.avatar.options[:storage]
       assert_equal "localhost", dummy.avatar.options[:sftp_options][:host]
       assert_equal "spectator", dummy.avatar.options[:sftp_options][:user]
-      assert_equal "password", dummy.avatar.options[:sftp_options][:password]
+      assert_equal "password", dummy.avatar.options[:sftp_options][:options][:password]
     end
   end
 

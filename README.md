@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
     sftp_options: {
       host: "sftp.example.com",
       user: "user",
-      password: "password"
+      options: { password: "password" }
     }
 end
 ```
