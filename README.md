@@ -23,10 +23,28 @@ class User < ActiveRecord::Base
     sftp_options: {
       host: "sftp.example.com",
       user: "user",
-      options: { password: "password" }
+      options: {
+        password: "password"
+      }
     }
 end
 ```
+To use keys:
+```ruby
+class User < ActiveRecord::Base
+  has_attached_file :avatar,
+    storage: :sftp,
+    sftp_options: {
+      host: "sftp.example.com",
+      user: "user",
+      options: {
+        keys: [ ENV['HOME'] + '/.ssh/id_rsa' ],
+      }
+    }
+end
+```
+
+You can pass any `options` for [`Net::SFTP.start`](http://net-ssh.rubyforge.org/sftp/v2/api/classes/Net/SFTP.html#M000001) as `sftp_options`.
 
 You can define these options globally, enable this storage for specific environments, etc. Please see [Paperclip](https://github.com/thoughtbot/paperclip) github page for more details.
 
