@@ -1,5 +1,8 @@
+[![Gem
+Version](https://badge.fury.io/rb/paperclip-sftp.png)](http://badge.fury.io/rb/paperclip-sftp)
 [![Dependency Status](https://gemnasium.com/spectator/paperclip-sftp.png)](https://gemnasium.com/spectator/paperclip-sftp)
-[![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/spectator/paperclip-sftp)
+[![Code
+Climate](https://codeclimate.com/github/spectator/paperclip-sftp.png)](https://codeclimate.com/github/spectator/paperclip-sftp)
 
 Paperclip SFTP
 ==============
