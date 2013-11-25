@@ -23,10 +23,16 @@ module Paperclip
       # Make SFTP connection, but use current one if exists.
       #
       def sftp
-        @sftp ||= Net::SFTP.start(
-          @sftp_options[:host],
-          @sftp_options[:user],
-          @sftp_options[:options],
+        @sftp ||= obtain_net_sftp_instance_for(@sftp_options)
+      end
+
+      def obtain_net_sftp_instance_for(options)
+        # Taken from Paperclip::Storage::S3
+        instances = (Thread.current[:paperclip_sftp_instances] ||= {})
+        instances[options] ||= Net::SFTP.start(
+          options[:host],
+          options[:user],
+          options[:options],
         )
       end
 
